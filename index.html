@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css"/>
+    <title>Quick</title>
+</head>
+<body>
+    <div id="inicio" class="inicio">
+        <img src="./assets/quickgame.jpg" />
+        <h1>Para iniciar o quiz, digite seu nome</h1>
+        <input type="text" class="addNome"/>
+        <button id="btnStart" class="btnStart">Jogar!</button>
+    </div>
+
+    <div id="nichos" class="nichos hidden">
+        <h1>Seu quiz será composto por 10 perguntas, para vencer será necessario acertar 5 delas. Antes de iniciar seu questionario, escolha o nicho sobre o qual serão suas perguntas!</h1>
+        <div>
+            <button id="nicho1" class="filme">FILMES & SÉRIES</button>
+            <button id="nicho2" class="musica">MÚSICA</button>
+            <button id="nicho3" class="tv">TV BRASILEIRA</button>
+            <button id="nicho4" class="jogo">JOGOS & GAMES</button>
+        </div>
+    </div>
+
+    <div id="perguntas" class="perguntas hidden">
+        <div id="pergunta"></div>
+        <div>
+            <button id="resposta1" class="btn"></button>
+            <button id="resposta2" class="btn"></button>
+            <button id="resposta3" class="btn"></button>
+            <button id="resposta4" class="btn"></button>
+        </div>
+    </div>
+
+    <script src="./js/quick.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+/* fundo de todas as paginas cor #92199C*/
+body {
+    background-color: #92199C; 
+}
+
+.addNome {
+    width: 320px;
+    height: 55px;
+    border-radius: 12px;
+}
+
+.btnStart {
+    width: 65px;
+    height: 60px;
+    border-radius: 8px;
+}
+
+/* todas as divs centralizadas */
+
+/* botton nicho1 = #FF0000 */
+/* botton nicho2 = #0EC821 */
+/* botton nicho3 = #ECE304 */
+/* botton nicho4 = #3973E4 */
+
+.filme {
+    background-color: #FF0000;
+    width: 146px;
+    height: 156px;
+    border-radius: 12px;
+    margin: 10px;
+}
+
+.musica {
+    background-color: #0EC821;
+    width: 146px;
+    height: 156px;
+    border-radius: 12px;
+    margin: 10px;
+}
+
+.tv {
+    background-color: #ECE304;
+    width: 146px;
+    height: 156px;
+    border-radius: 12px;
+    margin: 10px;
+}
+
+.jogo {
+    background-color: #3973E4;
+    width: 146px;
+    height: 156px;
+    border-radius: 12px;
+    margin: 10px;
+}
+
+.hidden{
+    display: none;
+}
+
+.acertou {
+    background-color: #0EC821;
+}
+
+.errou {
+    background-color: #FF0000;
+}
+
+.btn {
+    width: 329px;
+    height: 68px;
+    border-radius: 12px;
+    margin: 10px;
+}
