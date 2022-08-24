@@ -2,8 +2,8 @@ class Quick {
     constructor() {
       this.userName = ""
       this.filmesQuestions = [
-
-        {
+          
+          {
             question:
             'Qual criança de "A Fantástica Fábrica de Chocolate" achou o primeiro Bilhete Dourado?',
             answers: ["Augustus Gloop", "Veruca Salt", "Violet Beauregarde", "Mike Teavee"],
@@ -170,84 +170,186 @@ class Quick {
             correctAnswer: "Culinária"
         }
       ]
+      this.jogosQuestions = [
+        {
+            question: 'Qual o significado da sigla "LOL"?',
+            answers: ["League of Lords", "League of Losers", "League of Legends", "League of Legendary"],
+            correctAnswer: "League of Legends"
+        },
+        {
+            question: 'Qual empresa produz o jogo "Volorant"?',
+            answers: ["Humble Games", "EA", "Riot Games", "Sega"],
+            correctAnswer: "Riot Games"
+        },
+        {
+            question: 'Quem é o irmão do Mario no jogo "Mario Bros"?',
+            answers: ["Luigi", "Yoshi", "Wario", "Luiz"],
+            correctAnswer: "Luigi"
+        },
+        {
+            question: 'Qual o nome do protagonista do GTA 5?',
+            answers: ["Claude", "Niko Belic", "Claude Speed", "Franklin Clinton"],
+            correctAnswer: "Franklin Clinton"
+        },
+        {
+            question: 'Em qual dos países abaixo o jogo "Free Fire" é proibido',
+            answers: ["Índia", "Indonésia", "Arábia Saudita", "China"],
+            correctAnswer: "Índia"
+        },
+        {
+            question: 'Qual desses jogos foi produzido pela empresa "Supercell"',
+            answers: ["Dodgeball Academia", "Unsighted", "Clash of Cleans", "Golden Axe"],
+            correctAnswer: "Clash of Cleans"
+        },
+        {
+            question: 'Qual a tradução da sigla "GTA"',
+            answers: ["Grand Theft Auto", "Giant Theft Auto", "Good Theft Auto", "Generous Theft Auto"],
+            correctAnswer: "Grand Theft Auto"
+        },
+        {
+            question: 'Qual o ano de lançamento do jogo "Minecraft" para o público',
+            answers: ["2007", "2009", "2011", "2013"],
+            correctAnswer: "2011"
+        },
+        {
+            question: 'A franquia de jogos eletronincos "FIFA" possui quantas series?',
+            answers: ["24", "32", "38", "42"],
+            correctAnswer: "42"
+        },
+        {
+            question: '"O projetista Will Wright idealizou o primeiro jogo por pelo menos 9 anos, até ele ser lançado oficialmente, em 4 de fevereiro de 2000". Sobre qual jogo a afirmação se refere?',
+            answers: ["The Sims", "Diablo II", "Giants: Citizen Kabuto on Steam", "Hitman: Codename 47 on Steam"],
+            correctAnswer: "The Sims"
+        }
+      ]
+      this.questions = [this.filmesQuestions,this.musicQuestions, this.tvQuestions, this.jogosQuestions]
+
+      this.nicho 
       this.solution = []
-      this.perguntaAtual = {}
       this.round = 0
+      this.perguntaAtual 
       this.points = 0
     }
+
+        setNicho(clickNicho) {
+                console.log(clickNicho)
+            this.nicho = clickNicho
+        }
+
         setPerguntaAtual() {
-            this.perguntaAtual = this.filmesQuestions [this.round]
+            console.log(this.nicho, this.questions)
+            this.perguntaAtual = this.questions[this.nicho][this.round]
+            console.log(this.perguntaAtual)
         }
 
         proximaPergunta() {
             if (this.round < 10){
                 this.round ++
                 console.log(this.round)
-                this.perguntaAtual = this.filmesQuestions[this.round]
-               
-
-            }         
-            if(this.round === 10 && this.points < 5) {
-                window.alert('perdeu kkkkkkkkkkkkkk')
-            }
+                this.perguntaAtual = this.questions[this.nicho][this.round]
+            }      
         }
 
         printQuestion() {
+            if (this.round === 10) {
+                return
+            }
             perguntas.innerText = game.perguntaAtual.question
             game.perguntaAtual.answers.forEach((opcao, index) => {
-             // console.log(opcao, index)
           const answer = document.querySelector(`#resposta${index+1}`)
-             // console.log (answer)
              answer.innerText = opcao
             })
+
         }
 
-
-      renderQuestions() {
-        let questionRandomOrder = this.filmesQuestions.sort(() => {
+        renderQuestionsFilme() {
+        let questionRandomOrder = this.questions[0].sort(() => {
             return Math.random() - 0.5
         })
-      }
+        }
 
-      checkAnswer(clickAnswer) {
+        renderQuestionsMusic() {
+        let questionRandomOrder = this.questions[1].sort(() => {
+            return Math.random() - 0.5
+        })
+        }
+
+        renderQuestionsTv() {
+        let questionRandomOrder = this.questions[2].sort(() => {
+            return Math.random() - 0.5
+        })
+        }
+
+        renderQuestionsJogos() {
+        let questionRandomOrder = this.questions[3].sort(() => {
+            return Math.random() - 0.5
+        })
+        }
+
+        checkAnswer(clickAnswer) {
         let answers = document.querySelectorAll(".btn")
 
-        // console.log(clickAnswer)
-
-        if(clickAnswer.innerText === this.perguntaAtual.correctAnswer) {
-            this.points ++   
-            this.proximaPergunta()
-            console.log("voce acertou")
-            this.checkStatus()
-            clickAnswer.classList.add("acertou")
+          if(clickAnswer.innerText === this.perguntaAtual.correctAnswer) {
+              this.points ++   
+              this.proximaPergunta()
+              console.log("voce acertou")
+              this.checkStatus()
+              clickAnswer.classList.add("acertou")
             
-            setTimeout(() => {
-                this.printQuestion()
-                clickAnswer.classList.remove("acertou")
-            }, 1000);
-        } else {
-            this.proximaPergunta()
-            console.log("voce errou")
-            this.checkStatus()
-            clickAnswer.classList.add("errou")
+              setTimeout(() => {
+                  this.printQuestion()
+                  clickAnswer.classList.remove("acertou")
+              }, 1000);
+          } else {
+              this.proximaPergunta()
+              console.log("voce errou")
+              this.checkStatus()
+              clickAnswer.classList.add("errou")
 
-            setTimeout(() => {
-                this.printQuestion()
-                clickAnswer.classList.remove("errou")
-            }, 1000);
+              setTimeout(() => {
+                  this.printQuestion()
+                  clickAnswer.classList.remove("errou")
+              }, 1000);
+             }
         }
-      }
 
-      checkStatus() {
-        // caso tenha 5 pontos positivos, ganhou/ caso ja tenha passado todas as perguntas e nao fazer 5 postos, perdeu
-        if (this.points === 5) {
-            window.alert('GANHOOOOOOUUUU')
-        } 
-        if(this.round > 10 && this.points < 5) {
-            window.alert('perdeu kkkkkkkkkkkkkk')
+        checkStatus() {
+            const status = document.querySelector("#status")
+            const venceu = document.querySelector(".venceu")
+            const perdeu = document.querySelector(".perdeu")
 
+
+          if (this.points === 5) {
+              let div = document.createElement("div");
+              div.innerText = `
+                Parabéns, ${this.userName}! Você venceu.
+              `;
+
+            inicio.classList.add("hide")
+            perguntasBox.classList.add("hide")
+            status.classList.remove("hide")
+            status.style.display = "flex"
+            
+            perdeu.classList.add("hide")
+
+            document.getElementById("endMessage").appendChild(div);            
+          } 
+          if (this.round === 10 && this.points < 5) {
+         
+            let div = document.createElement("div");
+            div.innerHTML = `
+              Não foi dessa vez, ${this.userName}. Tente novamente, ou escolha outro nicho.
+            `;
+
+            inicio.classList.add("hide")
+            perguntasBox.classList.add("hide")
+            status.classList.remove("hide")
+            status.style.display = "flex"
+
+            
+            venceu.classList.add("hide")
+
+            document.getElementById("endMessage").appendChild(div);            
+          }
         }
-      }
-
-    // conseguir separar as paginas e fazer com que os bottons que facam a alteracao de paginas
 }

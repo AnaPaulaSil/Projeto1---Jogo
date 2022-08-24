@@ -1,26 +1,77 @@
-/* fundo de todas as paginas cor #92199C*/
+@import url(https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap);
+
+* {font-family: 'Bree Serif', serif;}
+
 body {
     background-color: #92199C; 
 }
 
+.inicio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.logo {
+    margin-top: 80px;
+}
+
+.h1 {
+    background-color: #eea0f5;
+    text-align: center;
+    border-radius: 18px;
+    padding: 15px;
+    box-shadow: 4px 4px 4px rgb(77, 75, 75);
+}
+
 .addNome {
-    width: 320px;
-    height: 55px;
+    width: 340px;
+    height: 48px;
     border-radius: 12px;
+    font-size: 25px;
 }
 
 .btnStart {
-    width: 65px;
-    height: 60px;
+    background-color: rgb(254, 135, 16);
+    width: 320px;
+    height: 55px;
     border-radius: 8px;
+    margin-top: 9px;
+    font-size: 25px;
 }
 
-/* todas as divs centralizadas */
+.nichos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    margin-top: 90px;
+}
 
-/* botton nicho1 = #FF0000 */
-/* botton nicho2 = #0EC821 */
-/* botton nicho3 = #ECE304 */
-/* botton nicho4 = #3973E4 */
+.introducao {
+    text-align: center;
+    background-color: #eea0f5;
+    color: rgb(77, 74, 74);
+    border-radius: 18px;
+    padding: 15px;
+    box-shadow: 4px 4px 4px rgb(77, 75, 75);
+    font-size: 22px;
+}
+
+.menu > button{
+    font-size: 20px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 15%;
+}
 
 .filme {
     background-color: #FF0000;
@@ -54,8 +105,52 @@ body {
     margin: 10px;
 }
 
+.perguntas {
+    font-size: 35px; 
+    text-align: center;
+    border-radius: 18px;
+    padding: 15px;
+    box-shadow: 4px 4px 4px rgb(77, 75, 75);  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #eea0f5;
+    align-self: center;
+    margin-top: 100px;
+ }
+
+#pergunta {
+    border-radius: 18px;
+    padding: 15px;
+    box-shadow: 4px 4px 4px rgb(77, 75, 75);  
+    background-color: #92199C;
+    margin-bottom: 5%;
+}
+
+.btn {
+    width: 380px;
+    height: 68px;
+    border-radius: 12px;
+    margin: 10px;
+    font-size: 22px;
+}
+
+.grupoRespostas {
+    margin-top: 60px;
+}
+
 .hidden{
     display: none;
+}
+
+.hide {
+    display: none;
+}
+
+.centro {
+    flex-direction: column;
+    align-items: center;
 }
 
 .acertou {
@@ -66,9 +161,32 @@ body {
     background-color: #FF0000;
 }
 
-.btn {
-    width: 329px;
+.venceu {
+    margin-top: 60px;
+}
+
+.perdeu {
+    margin-top: 60px;
+    width: 350px;
+    height: 480px;
+}
+
+.retorno {
+    width: 380px;
     height: 68px;
     border-radius: 12px;
     margin: 10px;
+    font-size: 24px;
+    background-color: rgb(254, 135, 16);
+    margin-top: 30px;
+}
+
+.endMessage {
+    font-size: 25px;
+    background-color: #eea0f5;
+    text-align: center;
+    border-radius: 18px;
+    padding: 15px;
+    box-shadow: 4px 4px 4px rgb(77, 75, 75);
+    margin-top: 65px;
 }
