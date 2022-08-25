@@ -12,14 +12,14 @@ class Quick {
       
         {
             question: 
-            'Quem planeou o assalto em "La Casa de Papel"?',
+            'Quem planejou o assalto em "La Casa de Papel"?',
             answers: ["Nairobi", "Berlin", "Rio", "Professor"],
             correctAnswer: "Professor"
         },
     
         {
             question:
-            "Qual foi o primeiro filme de animação a ser indicado ao Oscar de Melhor Filme?",
+            "Qual foi o primeiro filme de animação a ser indicado ao Óscar de Melhor Filme?",
             answers: ["Bambi", "A Pequena Sereia", "A Viagem de Chihiro", "A Bela e a Fera"],
             correctAnswer: "A Bela e a Fera"
         },
@@ -31,7 +31,7 @@ class Quick {
         },
         {
             question:
-            'Qual a cor do vestido em que Blair se casa com Chuck Bass em "Gossip Girl"? (esta é obrigatória saber!)',
+            'Qual a cor do vestido que Blair se casa com Chuck Bass em "Gossip Girl"? (esta é obrigatória saber!)',
             answers: ["Branco", "Azul", "Prata", "Rosa"],
             correctAnswer: "Azul"
         },
@@ -88,7 +88,7 @@ class Quick {
             correctAnswer: "Elis Regina"
         },
         {
-            question: "Surgido entre o fim do século XIX e o início do século XX em Nova Orleans nos Estados Unidos, o Jazz pode ser definido como um estilo musical que preza pelo(a):",
+            question: "Ancorado entre o fim do século XIX e o início do século XX em Nova Orleans nos Estados Unidos, o Jazz pode ser definido como um estilo musical que preza pelo(a):",
             answers: ["Planejamento", "Improvisação", "Precisão", "Rapidez"],
             correctAnswer: "Improvisação"
         },
@@ -99,11 +99,11 @@ class Quick {
         },
         {
             question: "Qual a única cantora brasileira a alcançar a marca de Top #1 no Spotify Global?",
-            answers: ["Ludmilla", "Luisa Sonza", "Lexa", "Anitta"],
+            answers: ["Ludmilla", "Luisa Sonza", "Pabllo Vittar", "Anitta"],
             correctAnswer: "Anitta"
         },
         {
-            question: 'Em que capital brasileiro surgiu o ritmo musical denominado “Brega Funk”?',
+            question: 'Em que capital brasileira surgiu o ritmo musical denominado “Brega Funk”?',
             answers: ["Maceió", "Natal", "Fortaleza", "Recife"],
             correctAnswer: "Recife "
         },
@@ -160,7 +160,7 @@ class Quick {
             correctAnswer: "2"
         },
         {
-            question: 'Em 21 de maio de 1991, foi transmitido o primeiro “Plantao da Globo”, anunciando o assassinato do primeiro-ministro da Índia Rajiv Gandhi. O que estava sendo exibido no momento da interrupção?',
+            question: 'Em 21 de maio de 1991, foi transmitido o primeiro “Plantão da Globo”, anunciando o assassinato do primeiro-ministro da Índia Rajiv Gandhi. O que estava sendo exibido no momento da interrupção?',
             answers: ["Sessão da Tarde", '“Felicidade” - Novela das 21:00', "Xou da Xuxa", '“Cambalacho” - Vale a Pena Ver de Novo'],
             correctAnswer: "Sessão da Tarde"
         },
@@ -222,7 +222,7 @@ class Quick {
             correctAnswer: "The Sims"
         }
       ]
-      this.questions = [this.filmesQuestions,this.musicQuestions, this.tvQuestions, this.jogosQuestions]
+      this.questions = [this.filmesQuestions, this.musicQuestions, this.tvQuestions, this.jogosQuestions]
 
       this.nicho 
       this.solution = []
@@ -232,20 +232,16 @@ class Quick {
     }
 
         setNicho(clickNicho) {
-                console.log(clickNicho)
             this.nicho = clickNicho
         }
 
         setPerguntaAtual() {
-            console.log(this.nicho, this.questions)
             this.perguntaAtual = this.questions[this.nicho][this.round]
-            console.log(this.perguntaAtual)
         }
 
         proximaPergunta() {
             if (this.round < 10){
                 this.round ++
-                console.log(this.round)
                 this.perguntaAtual = this.questions[this.nicho][this.round]
             }      
         }
@@ -292,7 +288,6 @@ class Quick {
           if(clickAnswer.innerText === this.perguntaAtual.correctAnswer) {
               this.points ++   
               this.proximaPergunta()
-              console.log("voce acertou")
               this.checkStatus()
               clickAnswer.classList.add("acertou")
             
@@ -302,7 +297,6 @@ class Quick {
               }, 1000);
           } else {
               this.proximaPergunta()
-              console.log("voce errou")
               this.checkStatus()
               clickAnswer.classList.add("errou")
 

@@ -75,10 +75,9 @@ buttonStart.addEventListener("click", () => {
      })
   })
 
-const retorno = document.querySelector("#retorno")
-
-retorno.addEventListener("click", () => {
+  const retorno = document.querySelector("#retorno")
+  retorno.addEventListener("click", () => {
   location.reload()
-})
+  })
 
 
