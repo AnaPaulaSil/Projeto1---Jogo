@@ -187,7 +187,7 @@ class Quick {
             correctAnswer: "Luigi"
         },
         {
-            question: 'Qual o nome do protagonista do GTA 5?',
+            question: 'Qual o nome de um dos protagonista do GTA 5?',
             answers: ["Claude", "Niko Belic", "Claude Speed", "Franklin Clinton"],
             correctAnswer: "Franklin Clinton"
         },
@@ -198,7 +198,7 @@ class Quick {
         },
         {
             question: 'Qual desses jogos foi produzido pela empresa "Supercell"',
-            answers: ["Dodgeball Academia", "Unsighted", "Clash of Cleans", "Golden Axe"],
+            answers: ["Dodgeball Academia", "Unsighted", "Clash of Clans", "Golden Axe"],
             correctAnswer: "Clash of Cleans"
         },
         {
@@ -223,7 +223,6 @@ class Quick {
         }
       ]
       this.questions = [this.filmesQuestions, this.musicQuestions, this.tvQuestions, this.jogosQuestions]
-
       this.nicho 
       this.solution = []
       this.round = 0
