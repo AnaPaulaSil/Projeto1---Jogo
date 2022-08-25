@@ -12,7 +12,7 @@ class Quick {
       
         {
             question: 
-            'Quem planejou o assalto em "La Casa de Papel"?',
+            'Quem organizou o assalto em "La Casa de Papel"?',
             answers: ["Nairobi", "Berlin", "Rio", "Professor"],
             correctAnswer: "Professor"
         },
